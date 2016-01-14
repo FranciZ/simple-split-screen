@@ -4,6 +4,13 @@ $('.slide').on('click', function(){
    
     var $slides = $('.slide');
     
+    var pageName = $(this).attr('data-page-name');
+    
+    //update URL fragment generating new history record
+    //hasher.setHash(pageName);
+    var stateObj = { foo: "bar" };
+    history.pushState(stateObj,pageName,pageName);
+    
     if(!opened){
     
         for(var i=0;i<$slides.length;i++){
